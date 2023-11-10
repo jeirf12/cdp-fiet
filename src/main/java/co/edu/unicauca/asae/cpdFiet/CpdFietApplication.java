@@ -11,10 +11,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import co.edu.unicauca.asae.cpdFiet.model.DireccionEntity;
-import co.edu.unicauca.asae.cpdFiet.model.DocenteEntity;
-import co.edu.unicauca.asae.cpdFiet.model.PublicacionEntity;
-import co.edu.unicauca.asae.cpdFiet.model.TipoEntity;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades.DireccionEntity;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades.DocenteEntity;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades.PublicacionEntity;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades.TipoEntity;
 import co.edu.unicauca.asae.cpdFiet.repository.DocenteRepository;
 import co.edu.unicauca.asae.cpdFiet.repository.PublicacionRepository;
 
