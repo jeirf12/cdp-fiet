@@ -2,7 +2,7 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPr
 
 import java.util.List;
 
-public class ProductoRestController {
+public class PublicacionRestController {
 
 
 }
