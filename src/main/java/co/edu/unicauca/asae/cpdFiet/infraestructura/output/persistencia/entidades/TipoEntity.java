@@ -14,7 +14,7 @@ import lombok.Data;
 public class TipoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idTipo;
+    private int idTipo;
     private String nombre;
 
     @ManyToOne

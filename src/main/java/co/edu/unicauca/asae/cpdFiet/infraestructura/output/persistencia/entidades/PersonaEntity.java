@@ -16,15 +16,15 @@ import lombok.Data;
 public abstract class PersonaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer idPersona;
+    private int idPersona;
     private String tipoIdentificacion;
-    private Integer numeroIdentificacion;
+    private int numeroIdentificacion;
     private String nombres;
     private String apellidos;
 
     public PersonaEntity() {  } 
 
-    public PersonaEntity(String tipoId, Integer numeroId, String nombres, String apellidos) {
+    public PersonaEntity(String tipoId, int numeroId, String nombres, String apellidos) {
         this.tipoIdentificacion = tipoId;
         this.numeroIdentificacion = numeroId;
         this.nombres = nombres;

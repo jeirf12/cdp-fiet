@@ -13,7 +13,7 @@ import lombok.Data;
 @Table(name = "Direcciones")
 public class DireccionEntity {
     @Id
-    private Integer idPersona;
+    private int idPersona;
     private String direccionResidencia;
     private String ciudad;
     private String pais;

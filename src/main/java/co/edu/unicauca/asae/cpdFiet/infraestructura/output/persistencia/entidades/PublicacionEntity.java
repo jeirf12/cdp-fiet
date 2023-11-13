@@ -17,7 +17,7 @@ import lombok.Data;
 public class PublicacionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idPublicacion;
+    private int idPublicacion;
     private String titulo;
     private String area;
 

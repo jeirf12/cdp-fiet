@@ -5,7 +5,6 @@ import java.util.List;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Publicacion;
 
 public interface GestionarPublicacionCUIntPort {
-	public Publicacion crearPublicacion(Publicacion publicacion);
-
+	public Publicacion crearPublicacion(Publicacion objPublicacion);
 	public List<Publicacion> listarPublicaciones();
 }
