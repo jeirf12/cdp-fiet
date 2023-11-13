@@ -12,8 +12,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class PublicacionDTOPeticion { 
     private int id;
-    @NotNull(message = "{producto.titulo.emply}")
-    @Size(min = 5, max = 7, message = "{producto.titulo.size}") //TODO COMPLETAR LAS DEMAS
+    @NotNull(message = "{publicacion.titulo.emply}")
+    @Size(min = 5, max = 7, message = "{publicacion.titulo.size}") //TODO COMPLETAR LAS DEMAS
 	private String titulo;
 	private String area;
 	private List<TipoEntity> tipos;
