@@ -1,7 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.gateway;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.output.GestionarDocenteGatewayIntPort;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Docente;

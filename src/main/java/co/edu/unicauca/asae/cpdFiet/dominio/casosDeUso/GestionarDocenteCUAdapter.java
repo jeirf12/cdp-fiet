@@ -1,7 +1,5 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.casosDeUso;
 
-import java.util.Date;
-import java.util.List;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarDocenteCUIntPort;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.output.DocenteFormateadorResultadosIntPort;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.output.GestionarDocenteGatewayIntPort;
