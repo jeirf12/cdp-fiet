@@ -24,7 +24,8 @@ public class GestionarPublicacionGatewayImplAdapter implements GestionarPublicac
 
     @Override
     public boolean existePublicacionPorTitulo(String codigo) {
-        return this.objPublicacionRepository.existePublicacionPorTitulo(codigo) == 1;
+        return false;
+        //return this.objPublicacionRepository.existePublicacionPorTitulo(codigo) == 1; TODO
     }
 
     @Override
