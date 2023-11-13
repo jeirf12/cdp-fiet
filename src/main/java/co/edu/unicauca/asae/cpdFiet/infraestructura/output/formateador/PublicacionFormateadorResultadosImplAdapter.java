@@ -1,5 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.formateador;
 
-public class PublicacionFormateadorResultadosImplAdapter {
-    
-}
+import org.springframework.stereotype.Service;
+
+@Service
+public class PublicacionFormateadorResultadosImplAdapter {  }

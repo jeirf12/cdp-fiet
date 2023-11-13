@@ -3,12 +3,13 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.mappers
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
-public class PublicacionMapper {
+public class DocenteMapper {
   @Bean
-  public ModelMapper getModelMapperPublicacion() {
+  @Primary
+  public ModelMapper getModelMapperDocente() {
     return new ModelMapper();
   }
-
 }

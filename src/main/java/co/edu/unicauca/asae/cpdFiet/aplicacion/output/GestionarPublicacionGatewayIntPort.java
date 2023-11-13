@@ -1,6 +1,4 @@
 package co.edu.unicauca.asae.cpdFiet.aplicacion.output;
 
+public interface GestionarPublicacionGatewayIntPort { }
 
-public interface GestionarProductoGatewayIntPort {
-    
-}

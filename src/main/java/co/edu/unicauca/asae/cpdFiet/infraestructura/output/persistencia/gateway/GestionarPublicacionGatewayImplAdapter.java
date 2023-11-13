@@ -1,5 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.gateway;
 
-public class GestionarPublicacionGatewayImplAdapter {
-    
-}
+import org.springframework.stereotype.Service;
+
+@Service
+public class GestionarPublicacionGatewayImplAdapter { }

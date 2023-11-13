@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-
 import lombok.Data;
 
 @Data
@@ -23,8 +22,7 @@ public abstract class PersonaEntity {
     private String nombres;
     private String apellidos;
 
-    public PersonaEntity() {
-    }
+    public PersonaEntity() {  } 
 
     public PersonaEntity(String tipoId, Integer numeroId, String nombres, String apellidos) {
         this.tipoIdentificacion = tipoId;
