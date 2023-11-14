@@ -3,6 +3,8 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDo
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import lombok.Data;
 
 @Data
@@ -29,5 +31,6 @@ public class DocenteDTOPeticion {
   @NotEmpty(message = "{docente.departamento.vacio}")
   @NotBlank(message = "{docente.departamento.vacio}")
   private String departamento; 
+  @NotNull(message = "{docente.direccion.vacio}")
   private DireccionDTOPeticion direccion;
 }

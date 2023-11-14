@@ -18,7 +18,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "Docentes")
 public class DocenteEntity extends PersonaEntity {
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String correo;
     @Column(nullable = false)
     private String vinculacion;
