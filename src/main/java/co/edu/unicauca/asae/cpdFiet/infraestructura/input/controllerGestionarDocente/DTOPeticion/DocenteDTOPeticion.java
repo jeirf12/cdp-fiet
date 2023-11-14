@@ -4,6 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import lombok.Data;
 
@@ -14,7 +15,8 @@ public class DocenteDTOPeticion {
   private String tipoIdentificacion;
   @NotEmpty(message = "{docente.numId.vacio}")
   @NotBlank(message = "{docente.numId.vacio}")
-  private Long numeroIdentificacion;
+  @Pattern(regexp = "^[0-9]+$", message = "{docente.numId.invalido}")
+  private String numeroIdentificacion;
   @NotEmpty(message = "{docente.nombres.vacio}")
   @NotBlank(message = "{docente.nombres.vacio}")
   private String nombres;

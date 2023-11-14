@@ -12,6 +12,7 @@ public interface DocenteMapperInfraestructuraDominio {
   @Mapping(target = "idPersona", ignore = true)
   @Mapping(target = "direccion.idPersona", ignore = true)
   @Mapping(target = "direccion.objDocente", ignore = true)
+  @Mapping(target = "numeroIdentificacion", expression = "java(Long.parseLong(peticion.getNumeroIdentificacion()))")
   Docente mappearDePeticionADocente(DocenteDTOPeticion peticion);
 
   DocenteDTORespuesta mappearDeDocenteARespuesta(Docente objDocente);
