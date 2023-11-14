@@ -11,7 +11,6 @@ import co.edu.unicauca.asae.cpdFiet.dominio.casosDeUso.GestionarPublicacionCUAda
 
 @Configuration
 public class BeanConfigurations {
-
 	@Bean
 	public GestionarDocenteCUAdapter crearGestionarDocenteCUInt(GestionarDocenteGatewayIntPort objGestionarDocenteGatewayIntPort, DocenteFormateadorResultadosIntPort objDocenteFormateadorResultadosIntPort) {
 		GestionarDocenteCUAdapter objGestionarDocenteCUAdapter = new GestionarDocenteCUAdapter(objGestionarDocenteGatewayIntPort, objDocenteFormateadorResultadosIntPort);
@@ -19,12 +18,8 @@ public class BeanConfigurations {
 	}
 
 	@Bean
-	public GestionarPublicacionCUAdapter crearGestionarPublicacionCUInt(
-			GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway,
-			PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados
-		) {
-		GestionarPublicacionCUAdapter objGestionarPublicacionCU = new GestionarPublicacionCUAdapter(objGestionarPublicacionGateway,
-				objPublicacionFormateadorResultados);
+	public GestionarPublicacionCUAdapter crearGestionarPublicacionCUInt(GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway, PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados) {
+		GestionarPublicacionCUAdapter objGestionarPublicacionCU = new GestionarPublicacionCUAdapter(objGestionarPublicacionGateway, objPublicacionFormateadorResultados);
 		return objGestionarPublicacionCU;
 	}
 }

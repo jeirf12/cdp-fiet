@@ -1,14 +1,19 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.modelos;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public abstract class Persona {
-    private int idPersona;
-    private String tipoIdentificacion;
-    private int numeroIdentificacion;
-    private String nombres;
-    private String apellidos;
+    protected int idPersona;
+    protected String tipoIdentificacion;
+    protected Long numeroIdentificacion;
+    protected String nombres;
+    protected String apellidos;
+
+    public Persona(String tipoIdentificacion, Long numeroIdentificacion, String nombres, String apellidos) {
+        this.tipoIdentificacion = tipoIdentificacion;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+    }
 }

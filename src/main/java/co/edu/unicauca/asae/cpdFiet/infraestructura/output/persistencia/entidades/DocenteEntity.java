@@ -2,6 +2,7 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidad
 
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -17,8 +18,11 @@ import lombok.Setter;
 @Entity
 @Table(name = "Docentes")
 public class DocenteEntity extends PersonaEntity {
+    @Column(nullable = false)
     private String correo;
+    @Column(nullable = false)
     private String vinculacion;
+    @Column(nullable = false)
     private String departamento;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -37,5 +41,6 @@ public class DocenteEntity extends PersonaEntity {
         this.correo = correo;
         this.vinculacion = vinculacion;
         this.departamento = departamento;
+        this.objDireccion = new DireccionEntity();
     }
 }

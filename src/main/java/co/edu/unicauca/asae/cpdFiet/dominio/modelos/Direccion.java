@@ -1,14 +1,18 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.modelos;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class Direccion {
-	private int id;
+	private int idPersona;
 	private String direccionResidencia;
 	private String ciudad;
 	private String pais;
 	private Docente objDocente;
+
+	public Direccion(String direccionResidencia, String ciudad, String pais) {
+		this.direccionResidencia = direccionResidencia;
+		this.ciudad = ciudad;
+		this.pais = pais;
+	}
 }

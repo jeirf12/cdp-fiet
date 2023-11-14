@@ -6,8 +6,8 @@ import co.edu.unicauca.asae.cpdFiet.aplicacion.output.GestionarDocenteGatewayInt
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Docente;
 
 public class GestionarDocenteCUAdapter implements GestionarDocenteCUIntPort {
-	private GestionarDocenteGatewayIntPort objGestionarDocenteGatewayIntPort;
-	private DocenteFormateadorResultadosIntPort objDocenteFormateadorResultadosIntPort;
+	private final GestionarDocenteGatewayIntPort objGestionarDocenteGatewayIntPort;
+	private final DocenteFormateadorResultadosIntPort objDocenteFormateadorResultadosIntPort;
 
 	public GestionarDocenteCUAdapter(GestionarDocenteGatewayIntPort objGestionarDocenteGatewayIntPort, DocenteFormateadorResultadosIntPort objDocenteFormateadorResultadosIntPort) {
 		this.objGestionarDocenteGatewayIntPort = objGestionarDocenteGatewayIntPort;

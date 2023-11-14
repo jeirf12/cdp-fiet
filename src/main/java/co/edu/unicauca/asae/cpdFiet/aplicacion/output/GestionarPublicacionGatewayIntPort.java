@@ -1,7 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.aplicacion.output;
 
 import java.util.List;
-
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Publicacion;
 
 public interface GestionarPublicacionGatewayIntPort {

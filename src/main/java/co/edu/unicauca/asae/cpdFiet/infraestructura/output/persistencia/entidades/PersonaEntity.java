@@ -1,5 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,14 +18,19 @@ public abstract class PersonaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idPersona;
+    @Column(nullable = false)
     private String tipoIdentificacion;
-    private int numeroIdentificacion;
+    @Column(nullable = false)
+    private Long numeroIdentificacion;
+    @Column(nullable = false)
     private String nombres;
+    @Column(nullable = false)
     private String apellidos;
 
     public PersonaEntity() {  } 
 
-    public PersonaEntity(String tipoId, int numeroId, String nombres, String apellidos) {
+    public PersonaEntity(String tipoId, Long numeroId, String nombres, String apellidos) {
+        this.idPersona = 0;
         this.tipoIdentificacion = tipoId;
         this.numeroIdentificacion = numeroId;
         this.nombres = nombres;

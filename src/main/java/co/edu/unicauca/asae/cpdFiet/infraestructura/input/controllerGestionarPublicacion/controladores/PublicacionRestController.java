@@ -2,8 +2,12 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPu
 
 import java.util.List;
 
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,16 +24,18 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
+@Validated
 public class PublicacionRestController { 
-        private final GestionarPublicacionCUIntPort objGestionarPublicacionsCUInt;
+    private final GestionarPublicacionCUIntPort objGestionarPublicacionsCUInt;
+
     private final PublicacionMapperInfraestructuraDominio objMapeador;
 
     @PostMapping("/publicaciones")
-    public ResponseEntity<PublicacionDTORespuesta> crear(@RequestBody PublicacionDTOPeticion objPublicacion) {
-        Publicacion objPublicacionCrear = objMapeador.mappearDePeticionAPublicacion(objPublicacion);
-        Publicacion objPublicacionCreado = objGestionarPublicacionsCUInt.crearPublicacion(objPublicacionCrear);
+    public ResponseEntity<PublicacionDTORespuesta> crear(@Valid @RequestBody PublicacionDTOPeticion objPublicacion) {
+        Publicacion objPublicacionCrear = this.objMapeador.mappearDePeticionAPublicacion(objPublicacion);
+        Publicacion objPublicacionCreado = this.objGestionarPublicacionsCUInt.crearPublicacion(objPublicacionCrear);
         ResponseEntity<PublicacionDTORespuesta> objRespuesta = new ResponseEntity<PublicacionDTORespuesta>(
-                objMapeador.mappearDePublicacionARespuesta(objPublicacionCreado),
+                this.objMapeador.mappearDePublicacionARespuesta(objPublicacionCreado),
                 HttpStatus.CREATED);
         return objRespuesta;
     }

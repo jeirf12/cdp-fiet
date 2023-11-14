@@ -7,6 +7,18 @@ import lombok.Data;
 
 @Data
 public class DocenteDTOPeticion {
+  @NotEmpty(message = "{docente.tipoId.vacio}")
+  @NotBlank(message = "{docente.tipoId.vacio}")
+  private String tipoIdentificacion;
+  @NotEmpty(message = "{docente.numId.vacio}")
+  @NotBlank(message = "{docente.numId.vacio}")
+  private Long numeroIdentificacion;
+  @NotEmpty(message = "{docente.nombres.vacio}")
+  @NotBlank(message = "{docente.nombres.vacio}")
+  private String nombres;
+  @NotEmpty(message = "{docente.apellidos.vacio}")
+  @NotBlank(message = "{docente.apellidos.vacio}")
+  private String apellidos;
   @Email(message = "{docente.correo.invalido}")
   @NotEmpty(message = "{docente.correo.vacio}")
   @NotBlank(message = "{docente.correo.vacio}")
