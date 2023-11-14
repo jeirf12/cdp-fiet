@@ -36,7 +36,7 @@ public class DocenteEntity extends PersonaEntity {
         super();
     }
 
-    public DocenteEntity(String tipoId, int numeroId, String nombre, String apellidos, String correo, String vinculacion, String departamento) {
+    public DocenteEntity(String tipoId, Long numeroId, String nombre, String apellidos, String correo, String vinculacion, String departamento) {
         super(tipoId, numeroId, nombre, apellidos);
         this.correo = correo;
         this.vinculacion = vinculacion;
