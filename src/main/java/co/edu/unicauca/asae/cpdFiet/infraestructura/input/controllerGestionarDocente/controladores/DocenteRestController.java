@@ -26,7 +26,7 @@ public class DocenteRestController {
   private final DocenteMapperInfraestructuraDominio objMappeador;
 
   @PostMapping("/docentes")
-  public final ResponseEntity<DocenteDTORespuesta> create(@Valid @RequestBody DocenteDTOPeticion objDocente) {
+  public ResponseEntity<DocenteDTORespuesta> create(@Valid @RequestBody DocenteDTOPeticion objDocente) {
     System.out.println("docente: " + objDocente.toString());
     Docente objDocenteCrear = this.objMappeador.mappearDePeticionADocente(objDocente);
     System.out.println("mappeador: "+this.objMappeador);
