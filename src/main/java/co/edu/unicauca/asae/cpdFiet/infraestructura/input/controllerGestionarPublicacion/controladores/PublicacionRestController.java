@@ -19,6 +19,7 @@ import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Tipo;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTOPeticion.PublicacionDTOPeticion;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTORespuesta.PublicacionDTORespuesta;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.mappers.PublicacionMapperInfraestructuraDominio;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -26,11 +27,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Validated
 public class PublicacionRestController { 
-    private final GestionarPublicacionCUIntPort objGestionarPublicacionsCUInt;
-
-    private final GestionarTipoCUIntPort objGestionarTipoCUInt;
-
-    private final PublicacionMapperInfraestructuraDominio objMapeador;
+    @NonNull
+    private GestionarPublicacionCUIntPort objGestionarPublicacionsCUInt;
+    @NonNull
+    private GestionarTipoCUIntPort objGestionarTipoCUInt;
+    @NonNull
+    private PublicacionMapperInfraestructuraDominio objMapeador;
 
     @PostMapping("/publicaciones")
     public ResponseEntity<PublicacionDTORespuesta> crear(@Valid @RequestBody PublicacionDTOPeticion objPublicacion) {

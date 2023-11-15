@@ -14,6 +14,7 @@ import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Docente;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTOPeticion.DocenteDTOPeticion;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTORespuesta.DocenteDTORespuesta;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.mappers.DocenteMapperInfraestructuraDominio;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -21,8 +22,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Validated
 public class DocenteRestController {
-  private final GestionarDocenteCUIntPort objGestionarDocenteCUIntPort;
-  private final DocenteMapperInfraestructuraDominio objMappeador;
+  @NonNull
+  private GestionarDocenteCUIntPort objGestionarDocenteCUIntPort;
+  @NonNull
+  private DocenteMapperInfraestructuraDominio objMappeador;
 
   @PostMapping("/docentes")
   public ResponseEntity<DocenteDTORespuesta> create(@Valid @RequestBody DocenteDTOPeticion objDocente) {
