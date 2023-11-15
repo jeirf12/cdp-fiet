@@ -1,11 +1,21 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.modelos;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Publicacion {
 	private int idPublicacion;
+	@NonNull
 	private String titulo;
+	@NonNull
 	private String area;
-	private Tipo tipo;
+	@NonNull
+	private Tipo objTipo;
 }

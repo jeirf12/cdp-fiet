@@ -12,5 +12,5 @@ public class DocenteDTORespuesta {
   private String correo; 
   private String vinculacion; 
   private String departamento; 
-  private DireccionDTORespuesta direccion;
+  private DireccionDTORespuesta objDireccion;
 }

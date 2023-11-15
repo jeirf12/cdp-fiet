@@ -2,9 +2,13 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDo
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class DireccionDTOPeticion {
   @NotEmpty(message = "{direccion.direccionResidencia.vacio}")
   @NotBlank(message = "{direccion.direccionResidencia.vacio}")

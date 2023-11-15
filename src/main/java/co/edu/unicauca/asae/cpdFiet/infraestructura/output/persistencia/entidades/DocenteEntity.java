@@ -11,18 +11,26 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "Docentes")
 public class DocenteEntity extends PersonaEntity {
     @Column(nullable = false, unique = true)
+    @NonNull
     private String correo;
     @Column(nullable = false)
+    @NonNull
     private String vinculacion;
     @Column(nullable = false)
+    @NonNull
     private String departamento;
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -31,16 +39,4 @@ public class DocenteEntity extends PersonaEntity {
 
     @OneToOne(optional = false, cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "objDocente")
     private DireccionEntity objDireccion;
-
-    public DocenteEntity() {
-        super();
-    }
-
-    public DocenteEntity(String tipoId, Long numeroId, String nombre, String apellidos, String correo, String vinculacion, String departamento) {
-        super(tipoId, numeroId, nombre, apellidos);
-        this.correo = correo;
-        this.vinculacion = vinculacion;
-        this.departamento = departamento;
-        this.objDireccion = new DireccionEntity();
-    }
 }

@@ -1,12 +1,10 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.excepcionesPropias;
 
-
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.estructuraExcepciones.CodigoError;
 import lombok.Getter;
 
 @Getter
 public class EntidadNoExisteException extends RuntimeException {
-
   private final String llaveMensaje;
   private final String codigo;
 

@@ -7,5 +7,5 @@ public class PublicacionDTORespuesta {
     private int idPublicacion;
 	private String titulo;
 	private String area;
-	private TipoDTORespuesta tipo;
+	private TipoDTORespuesta objTipo;
 }

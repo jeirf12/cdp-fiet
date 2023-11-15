@@ -7,31 +7,33 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "Direcciones")
 public class DireccionEntity {
     @Id
     private int idPersona;
     @Column(nullable = false)
+    @NonNull
     private String direccionResidencia;
     @Column(nullable = false)
+    @NonNull
     private String ciudad;
     @Column(nullable = false)
+    @NonNull
     private String pais;
 
     @OneToOne(optional = false)
     @MapsId
     @JoinColumn(name = "idPersona", nullable = false)
     private DocenteEntity objDocente;
-
-    public DireccionEntity() {  }
-
-    public DireccionEntity(String direccionResidencia, String ciudad, String pais) {
-        this.direccionResidencia = direccionResidencia;
-        this.ciudad = ciudad;
-        this.pais = pais;
-    }
 }

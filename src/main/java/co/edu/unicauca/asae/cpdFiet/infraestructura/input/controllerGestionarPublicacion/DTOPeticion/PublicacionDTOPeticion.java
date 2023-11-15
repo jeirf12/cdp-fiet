@@ -2,15 +2,25 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPu
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class PublicacionDTOPeticion { 
     @NotNull(message = "{publicacion.titulo.vacio}")
     @Size(min = 5, max = 7, message = "{producto.titulo.size}")
+    @NonNull
 	private String titulo;
     @NotNull(message = "{publicacion.area.vacio}")
+    @NonNull
 	private String area;
     @NotNull(message = "{publicacion.tipo.vacio}")
-	private TipoDTOPeticion tipo;
+    @NonNull
+	private TipoDTOPeticion objTipo;
 }

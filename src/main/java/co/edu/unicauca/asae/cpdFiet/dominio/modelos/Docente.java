@@ -1,21 +1,22 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.modelos;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
-@EqualsAndHashCode(callSuper=false)
+@Getter
+@Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Docente extends Persona {
+	@NonNull
 	private String correo;
+	@NonNull
 	private String vinculacion;
+	@NonNull
 	private String departamento;
-	private Direccion direccion;
-
-	public Docente(String tipoIdentificacion, Long numeroIdentificacion, String nombres, String apellidos, String correo, String vinculacion, String departamento, Direccion direccion) {
-		super(tipoIdentificacion, numeroIdentificacion, nombres, apellidos);
-		this.correo = correo;
-		this.vinculacion = vinculacion;
-		this.departamento = departamento;
-		this.direccion = direccion;
-	}
+	@NonNull
+	private Direccion objDireccion;
 }

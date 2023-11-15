@@ -5,10 +5,13 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-import lombok.Data;
-
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
 public class DocenteDTOPeticion {
   @NotEmpty(message = "{docente.tipoId.vacio}")
   @NotBlank(message = "{docente.tipoId.vacio}")
@@ -34,5 +37,5 @@ public class DocenteDTOPeticion {
   @NotBlank(message = "{docente.departamento.vacio}")
   private String departamento; 
   @NotNull(message = "{docente.direccion.vacio}")
-  private DireccionDTOPeticion direccion;
+  private DireccionDTOPeticion objDireccion;
 }

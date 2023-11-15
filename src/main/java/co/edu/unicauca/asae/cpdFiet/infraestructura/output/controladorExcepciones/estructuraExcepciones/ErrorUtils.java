@@ -1,11 +1,8 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.estructuraExcepciones;
 
-
 public final class ErrorUtils {
 
-  ErrorUtils() {
-
-  }
+  public ErrorUtils() {  }
 
   /**
    * Crea un nuevo objeto de <code>Error</code>

@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Getter
 public enum CodigoError {
-
         ERROR_GENERICO("GC-0001", "ERROR GENERICO"),
         ENTIDAD_YA_EXISTE("GC-0002", "ERROR ENTIDAD YA EXISTE"),
         ENTIDAD_NO_ENCONTRADA("GC-0003", "Entidad no encontrada"),

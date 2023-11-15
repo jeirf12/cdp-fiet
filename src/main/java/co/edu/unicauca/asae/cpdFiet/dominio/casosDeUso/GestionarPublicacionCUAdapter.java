@@ -10,19 +10,16 @@ public class GestionarPublicacionCUAdapter implements GestionarPublicacionCUIntP
     private final GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway;
     private final PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados;
 
-    public GestionarPublicacionCUAdapter(GestionarPublicacionGatewayIntPort objRegistrarPublicacionGateway,
-            PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados) {
-        this.objGestionarPublicacionGateway = objRegistrarPublicacionGateway;
+    public GestionarPublicacionCUAdapter(GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway, PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados) {
+        this.objGestionarPublicacionGateway = objGestionarPublicacionGateway;
         this.objPublicacionFormateadorResultados = objPublicacionFormateadorResultados;
     }
     @Override
     public Publicacion crearPublicacion(Publicacion objPublicacion) {
         Publicacion objPublicacionCreado = null;
         if (this.objGestionarPublicacionGateway.existePublicacionPorTitulo(objPublicacion.getTitulo())) {
-            this.objPublicacionFormateadorResultados
-                    .retornarRespuestaErrorEntidadExiste("Error, se encuentra en el sistema un Publicacion con ese titulo");
+            this.objPublicacionFormateadorResultados.retornarRespuestaErrorEntidadExiste("Error, se encuentra en el sistema un Publicacion con ese titulo");
         } else {
-
             objPublicacionCreado = this.objGestionarPublicacionGateway.guardar(objPublicacion);
         } 
         return objPublicacionCreado;  
