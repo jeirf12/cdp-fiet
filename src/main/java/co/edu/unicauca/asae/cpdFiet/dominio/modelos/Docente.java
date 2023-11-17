@@ -1,7 +1,5 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.modelos;
 
-import java.util.List;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;

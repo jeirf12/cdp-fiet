@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarDocenteCUIntPort;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarPublicacionCUIntPort;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarTipoCUIntPort;
-import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Docente;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Publicacion;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Tipo;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTOPeticion.PublicacionDTOPeticion;
