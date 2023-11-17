@@ -1,5 +1,7 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.gateway;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -19,10 +21,10 @@ public class GestionarTipoGatewayImplAdapter implements GestionarTipoGatewayIntP
   }
 
   @Override
-  public Tipo guardarTipo(Tipo objTipo) {
-    TipoEntity objTipoEntity = this.modelMapperTipo.map(objTipo, TipoEntity.class);
-    TipoEntity objTipoEntityRegistrado = this.objTipoRepository.save(objTipoEntity);
-    Tipo objTipoRespuesta = this.modelMapperTipo.map(objTipoEntityRegistrado, Tipo.class);
+  public Tipo obtenerTipo(Integer idTipo) {
+    Optional<TipoEntity> objTipoEntityRegistrado = this.objTipoRepository.findById(idTipo);
+    TipoEntity tipoObtenido = objTipoEntityRegistrado.get();
+    Tipo objTipoRespuesta = this.modelMapperTipo.map(tipoObtenido, Tipo.class);
     return objTipoRespuesta;
   }
 }

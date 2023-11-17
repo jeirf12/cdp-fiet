@@ -16,6 +16,8 @@ public class Publicacion {
 	private String titulo;
 	@NonNull
 	private String area;
+	// @NonNull
+	// private Integer idPersona;
 	@NonNull
 	private Tipo objTipo;
 }

@@ -12,8 +12,8 @@ public class GestionarTipoCUAdapter implements GestionarTipoCUIntPort {
 	}
 
 	@Override
-	public Tipo crearTipo(Tipo tipo) {
-		Tipo objTipoCreado = this.objGestionarTipoGateway.guardarTipo(tipo);
+	public Tipo obtenerTipo(Integer id) {
+		Tipo objTipoCreado = this.objGestionarTipoGateway.obtenerTipo(id);
 		return objTipoCreado;
 	}
 }

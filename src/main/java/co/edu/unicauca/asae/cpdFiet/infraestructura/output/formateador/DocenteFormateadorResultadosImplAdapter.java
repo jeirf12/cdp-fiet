@@ -2,6 +2,7 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.output.formateador;
 
 import org.springframework.stereotype.Service;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.output.DocenteFormateadorResultadosIntPort;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.excepcionesPropias.EntidadNoExisteException;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.excepcionesPropias.EntidadYaExisteException;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.excepcionesPropias.ReglaNegocioExcepcion;
 
@@ -16,6 +17,12 @@ public class DocenteFormateadorResultadosImplAdapter implements DocenteFormatead
   @Override
   public void retornarRespuestaErrorReglaDeNegocio(String mensaje) {
     ReglaNegocioExcepcion objException = new ReglaNegocioExcepcion(mensaje);
+    throw objException;
+  }
+
+  @Override
+  public void retornarRespuestaErrorEntidadNoExiste(String mensaje) {
+    EntidadNoExisteException objException = new EntidadNoExisteException(mensaje);
     throw objException;
   }
 }

@@ -24,4 +24,14 @@ public class GestionarDocenteCUAdapter implements GestionarDocenteCUIntPort {
 		}
 		return objDocenteCreado;
 	}
+
+	@Override
+	public Docente obtenerDocente(Integer idDocente) {
+		Docente objDocenteObtenido = null;
+		objDocenteObtenido = this.objGestionarDocenteGatewayIntPort.obtenerDocente(idDocente);
+		if (objDocenteObtenido == null) {
+			this.objDocenteFormateadorResultadosIntPort.retornarRespuestaErrorEntidadNoExiste("El docente no existe en el sistema");
+		}
+		return objDocenteObtenido;
+	}
 }

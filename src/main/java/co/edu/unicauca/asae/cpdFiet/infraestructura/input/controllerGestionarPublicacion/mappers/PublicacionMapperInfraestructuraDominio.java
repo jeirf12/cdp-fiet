@@ -10,7 +10,7 @@ import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPub
 @Mapper(componentModel = "spring")
 public interface PublicacionMapperInfraestructuraDominio { 
     @Mapping(target = "idPublicacion", ignore = true)
-    @Mapping(target = "objTipo.idTipo", ignore = true)
+    @Mapping(target = "objTipo.nombre", ignore = true)
     @Mapping(target = "objTipo.publicaciones", ignore = true)
     Publicacion mappearDePeticionAPublicacion(PublicacionDTOPeticion peticion);
 

@@ -1,87 +1,87 @@
 {
     "client": "Thunder Client",
     "collectionName": "pruebas2parcial",
-    "dateExported": "2023-11-17T02:33:17.512Z",
+    "dateExported": "2023-11-17T14:03:13.283Z",
     "version": "1.1",
     "folders": [
         {
-            "_id": "554f5963-40a6-4fb9-8bbc-fb03e6221982",
+            "_id": "d8ab6be0-6b7f-4d81-b001-fb4a4bff79eb",
             "name": "publicaciones",
             "containerId": "",
-            "created": "2023-11-13T22:14:31.334Z",
+            "created": "2023-11-17T02:34:25.408Z",
             "sortNum": 10000
         },
         {
-            "_id": "57c490f3-a0fe-4c83-882e-28bc3f887deb",
-            "name": "crear",
-            "containerId": "554f5963-40a6-4fb9-8bbc-fb03e6221982",
-            "created": "2023-11-14T20:19:15.717Z",
-            "sortNum": 20000
-        },
-        {
-            "_id": "1568caa5-750e-4e9b-9abc-04b0b784288b",
+            "_id": "3dcd2809-1134-481c-94cd-68f3789d5215",
             "name": "consultar",
-            "containerId": "554f5963-40a6-4fb9-8bbc-fb03e6221982",
-            "created": "2023-11-14T20:19:38.292Z",
+            "containerId": "d8ab6be0-6b7f-4d81-b001-fb4a4bff79eb",
+            "created": "2023-11-17T02:34:25.410Z",
             "sortNum": 30000
         },
         {
-            "_id": "dff92ce4-e5db-4bfa-960f-10f669d1c892",
+            "_id": "410d83f3-0321-49c3-8c09-b75c40bec756",
+            "name": "crear",
+            "containerId": "d8ab6be0-6b7f-4d81-b001-fb4a4bff79eb",
+            "created": "2023-11-17T02:34:25.409Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "7d7c4ed9-c5c1-4cc1-81a0-22df2d142b5f",
             "name": "docentes",
             "containerId": "",
-            "created": "2023-11-14T20:51:09.467Z",
+            "created": "2023-11-17T02:34:25.411Z",
             "sortNum": 40000
         }
     ],
     "requests": [
         {
-            "_id": "362a3004-3e2c-435b-a42f-537e9e2c9dcd",
-            "colId": "8594295e-4e83-4f63-83df-8956e320748b",
-            "containerId": "dff92ce4-e5db-4bfa-960f-10f669d1c892",
+            "_id": "954b2fde-c714-4bea-a90e-d5aa5d202467",
+            "colId": "023b0d85-1a39-4737-8544-301fe4b919cf",
+            "containerId": "7d7c4ed9-c5c1-4cc1-81a0-22df2d142b5f",
             "name": "crear Docente",
             "url": "localhost:5000/api/docentes",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2023-11-13T18:01:45.351Z",
-            "modified": "2023-11-14T21:29:59.044Z",
+            "created": "2023-11-17T02:34:25.408Z",
+            "modified": "2023-11-17T04:07:10.301Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"apellidos\": \"apellidos1\",\n  \"tipoIdentificacion\": \"CC\",\n  \"numeroIdentificacion\": \"123456789\",\n  \"nombres\": \"nombres1\",\n  \"correo\": \"prueba1@gmail.com\",\n  \"vinculacion\": \"vinculacion1\",\n  \"departamento\": \"departamento1\",\n  \"direccion\":{\n    \"direccionResidencia\": \"diResidencia1\",\n    \"ciudad\": \"ciudad1\",\n    \"pais\": \"pais1\"\n  }\n}",
+                "raw": "{\n  \"apellidos\": \"apellidos1\",\n  \"tipoIdentificacion\": \"CC\",\n  \"numeroIdentificacion\": \"123456789\",\n  \"nombres\": \"nombres1\",\n  \"correo\": \"prueba1@gmail.com\",\n  \"vinculacion\": \"vinculacion1\",\n  \"departamento\": \"departamento1\",\n  \"objDireccion\":{\n    \"direccionResidencia\": \"diResidencia1\",\n    \"ciudad\": \"ciudad1\",\n    \"pais\": \"pais1\"\n  }\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "ebb0968d-b669-4d78-98a0-747bb84130f0",
-            "colId": "8594295e-4e83-4f63-83df-8956e320748b",
-            "containerId": "57c490f3-a0fe-4c83-882e-28bc3f887deb",
+            "_id": "5e2f2542-cd82-4c8d-9f0c-17b4ef0ad896",
+            "colId": "023b0d85-1a39-4737-8544-301fe4b919cf",
+            "containerId": "410d83f3-0321-49c3-8c09-b75c40bec756",
             "name": "crear publicacion",
             "url": "localhost:5000/api/publicaciones",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2023-11-13T22:14:53.488Z",
-            "modified": "2023-11-14T22:43:35.264Z",
+            "created": "2023-11-17T02:34:25.409Z",
+            "modified": "2023-11-17T14:01:29.421Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"titulo\": \"Mi3456\",\n  \"area\": \"Ciencia de Datos\",\n  \"tipo\": {\n    \"nombre\": \"Conferencia\"\n  }\n}\n\n",
+                "raw": "{\n  \"titulo\": \"public2s\",\n  \"area\": \"Ciencia de Datos\",\n  \"objTipo\": {\n    \"idTipo\": null\n  }\n}\n\n",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "b0dd9a3d-f254-4f75-8f3a-ca6be34a9de0",
-            "colId": "8594295e-4e83-4f63-83df-8956e320748b",
-            "containerId": "1568caa5-750e-4e9b-9abc-04b0b784288b",
+            "_id": "11435209-98a6-4b64-9937-9d5eb7ce0194",
+            "colId": "023b0d85-1a39-4737-8544-301fe4b919cf",
+            "containerId": "3dcd2809-1134-481c-94cd-68f3789d5215",
             "name": "consultar",
             "url": "localhost:5000/api/publicaciones",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2023-11-14T22:42:40.201Z",
-            "modified": "2023-11-14T22:42:58.024Z",
+            "created": "2023-11-17T02:34:25.410Z",
+            "modified": "2023-11-17T02:34:25.410Z",
             "headers": [],
             "params": [],
             "tests": []

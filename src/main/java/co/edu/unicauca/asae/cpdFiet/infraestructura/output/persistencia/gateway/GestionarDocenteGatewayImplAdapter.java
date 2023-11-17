@@ -1,5 +1,7 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.gateway;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,10 +28,15 @@ public class GestionarDocenteGatewayImplAdapter implements GestionarDocenteGatew
   @Override
   public Docente guardarDocente(Docente docente) {
     DocenteEntity objDocenteEntity = this.modelMapperDocente.map(docente, DocenteEntity.class);
-    // TODO: PREGUNTAR SI SE HACE EN EL GATEWAY ADAPTER O EN EL CONTROLADOR
-    // objDocenteEntity.getObjDireccion().setObjDocente(objDocenteEntity);
     DocenteEntity objDocenteEntityCreado = this.docenteRepository.save(objDocenteEntity);
     Docente objDocenteRespuesta = this.modelMapperDocente.map(objDocenteEntityCreado, Docente.class);
+    return objDocenteRespuesta;
+  }
+
+  @Override
+  public Docente obtenerDocente(Integer id) {
+    Optional<DocenteEntity> objDocenteEntityObtenido = this.docenteRepository.findById(id);
+    Docente objDocenteRespuesta = this.modelMapperDocente.map(objDocenteEntityObtenido.get(), Docente.class);
     return objDocenteRespuesta;
   }
 }
