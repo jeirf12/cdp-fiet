@@ -14,15 +14,12 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class PublicacionDTOPeticion { 
     @NotNull(message = "{publicacion.titulo.vacio}")
-    @Size(min = 5, max = 7, message = "{producto.titulo.size}")
+    @Size(min = 5, max = 30, message = "{producto.titulo.size}")
     @NonNull
 	private String titulo;
     @NotNull(message = "{publicacion.area.vacio}")
     @NonNull
 	private String area;
-    // @NotNull(message = "{publicacion.idPersona.vacio}")
-    // @NonNull
-	// private Integer idPersona;
     @NotNull(message = "{publicacion.tipo.vacio}")
     @NonNull
 	private TipoDTOPeticion objTipo;

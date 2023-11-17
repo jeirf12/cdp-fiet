@@ -21,6 +21,4 @@ public class Docente extends Persona {
 	private String departamento;
 	@NonNull
 	private Direccion objDireccion;
-	@NonNull
-	private List<Publicacion> publicaciones;
 }

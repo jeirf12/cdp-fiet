@@ -15,7 +15,6 @@ public interface DocenteMapperInfraestructuraDominio {
 
   @Mapping(target = "idPersona", ignore = true)
   @Mapping(target = "objDireccion", qualifiedByName = "mapperDireccion")
-  @Mapping(target = "publicaciones", ignore = true)
   @Mapping(target = "numeroIdentificacion", expression = "java(Long.parseLong(docentePeticion.getNumeroIdentificacion()))")
   Docente mappearDePeticionADocente(DocenteDTOPeticion docentePeticion);
 
