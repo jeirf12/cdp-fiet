@@ -1,0 +1,90 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "pruebas2parcial",
+    "dateExported": "2023-11-17T02:33:17.512Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "554f5963-40a6-4fb9-8bbc-fb03e6221982",
+            "name": "publicaciones",
+            "containerId": "",
+            "created": "2023-11-13T22:14:31.334Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "57c490f3-a0fe-4c83-882e-28bc3f887deb",
+            "name": "crear",
+            "containerId": "554f5963-40a6-4fb9-8bbc-fb03e6221982",
+            "created": "2023-11-14T20:19:15.717Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "1568caa5-750e-4e9b-9abc-04b0b784288b",
+            "name": "consultar",
+            "containerId": "554f5963-40a6-4fb9-8bbc-fb03e6221982",
+            "created": "2023-11-14T20:19:38.292Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "dff92ce4-e5db-4bfa-960f-10f669d1c892",
+            "name": "docentes",
+            "containerId": "",
+            "created": "2023-11-14T20:51:09.467Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "362a3004-3e2c-435b-a42f-537e9e2c9dcd",
+            "colId": "8594295e-4e83-4f63-83df-8956e320748b",
+            "containerId": "dff92ce4-e5db-4bfa-960f-10f669d1c892",
+            "name": "crear Docente",
+            "url": "localhost:5000/api/docentes",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-13T18:01:45.351Z",
+            "modified": "2023-11-14T21:29:59.044Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"apellidos\": \"apellidos1\",\n  \"tipoIdentificacion\": \"CC\",\n  \"numeroIdentificacion\": \"123456789\",\n  \"nombres\": \"nombres1\",\n  \"correo\": \"prueba1@gmail.com\",\n  \"vinculacion\": \"vinculacion1\",\n  \"departamento\": \"departamento1\",\n  \"direccion\":{\n    \"direccionResidencia\": \"diResidencia1\",\n    \"ciudad\": \"ciudad1\",\n    \"pais\": \"pais1\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ebb0968d-b669-4d78-98a0-747bb84130f0",
+            "colId": "8594295e-4e83-4f63-83df-8956e320748b",
+            "containerId": "57c490f3-a0fe-4c83-882e-28bc3f887deb",
+            "name": "crear publicacion",
+            "url": "localhost:5000/api/publicaciones",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-13T22:14:53.488Z",
+            "modified": "2023-11-14T22:43:35.264Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"Mi3456\",\n  \"area\": \"Ciencia de Datos\",\n  \"tipo\": {\n    \"nombre\": \"Conferencia\"\n  }\n}\n\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b0dd9a3d-f254-4f75-8f3a-ca6be34a9de0",
+            "colId": "8594295e-4e83-4f63-83df-8956e320748b",
+            "containerId": "1568caa5-750e-4e9b-9abc-04b0b784288b",
+            "name": "consultar",
+            "url": "localhost:5000/api/publicaciones",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-14T22:42:40.201Z",
+            "modified": "2023-11-14T22:42:58.024Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
