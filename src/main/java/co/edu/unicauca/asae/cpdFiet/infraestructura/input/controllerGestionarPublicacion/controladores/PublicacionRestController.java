@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarDocenteCUIntPort;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarPublicacionCUIntPort;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.input.GestionarTipoCUIntPort;
@@ -39,10 +38,8 @@ public class PublicacionRestController {
     @PostMapping("/publicaciones")
     public ResponseEntity<PublicacionDTORespuesta> crear(@Valid @RequestBody PublicacionDTOPeticion objPublicacion) {
         Publicacion objPublicacionCrear = this.objMapeador.mappearDePeticionAPublicacion(objPublicacion);
-        //Docente objDocente = this.objGestionarDocenteCUInt.obtenerDocente(objPublicacion.getIdPersona());
         Tipo tipoObtenido = this.objGestionarTipoCUInt.obtenerTipo(objPublicacion.getObjTipo().getIdTipo());
         objPublicacionCrear.setObjTipo(tipoObtenido);
-        //objDocente.getPublicaciones().add(objPublicacionCrear);
         Publicacion objPublicacionCreado = this.objGestionarPublicacionsCUInt.crearPublicacion(objPublicacionCrear);
         ResponseEntity<PublicacionDTORespuesta> objRespuesta = new ResponseEntity<PublicacionDTORespuesta>(
             this.objMapeador.mappearDePublicacionARespuesta(objPublicacionCreado),

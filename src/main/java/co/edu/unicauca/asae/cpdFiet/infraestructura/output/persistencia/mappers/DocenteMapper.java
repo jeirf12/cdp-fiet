@@ -15,7 +15,6 @@ public class DocenteMapper {
     ModelMapper objMapper = new ModelMapper();
     TypeMap<DocenteEntity, Docente> mapa = objMapper.emptyTypeMap(DocenteEntity.class, Docente.class);
     mapa.addMappings(n -> n.skip(Docente::setObjDireccion)).implicitMappings();
-    
     return objMapper;
   }
 }

@@ -28,8 +28,7 @@ public class GestionarPublicacionGatewayImplAdapter implements GestionarPublicac
     @Override
     public List<Publicacion> listar() {
         Iterable<PublicacionEntity> lista = this.objPublicacionRepository.findByTituloLikeOrderByIdPublicacionDesc("%S");
-        List<Publicacion> listaObtenida = this.modelMapperPublicacion.map(lista, new TypeToken<List<Publicacion>>() {
-        }.getType());
+        List<Publicacion> listaObtenida = this.modelMapperPublicacion.map(lista, new TypeToken<List<Publicacion>>() {}.getType());
         return listaObtenida;
     }
 

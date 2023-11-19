@@ -13,6 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class DocenteDTOPeticion {
+  private int idPersona;
   @NotEmpty(message = "{docente.tipoId.vacio}")
   @NotBlank(message = "{docente.tipoId.vacio}")
   private String tipoIdentificacion;

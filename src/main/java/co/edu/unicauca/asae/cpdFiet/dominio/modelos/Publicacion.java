@@ -1,5 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.dominio.modelos;
 
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -16,8 +17,8 @@ public class Publicacion {
 	private String titulo;
 	@NonNull
 	private String area;
-	// @NonNull
-	// private Integer idPersona;
 	@NonNull
 	private Tipo objTipo;
+	@NonNull
+	private List<Docente> docentes;
 }

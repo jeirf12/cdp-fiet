@@ -1,11 +1,15 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Getter;
@@ -34,4 +38,7 @@ public class PublicacionEntity {
     @ManyToOne
     @JoinColumn(name = "objTipo", nullable = false)
     private TipoEntity objTipo;
+
+    @ManyToMany(mappedBy = "publicaciones")
+    private List<DocenteEntity> docentes;
 }
