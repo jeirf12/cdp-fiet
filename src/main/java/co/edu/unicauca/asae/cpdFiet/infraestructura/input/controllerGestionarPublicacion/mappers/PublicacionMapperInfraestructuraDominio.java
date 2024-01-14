@@ -1,6 +1,7 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.mappers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
@@ -16,23 +17,8 @@ public interface PublicacionMapperInfraestructuraDominio {
     @Mapping(target = "idPublicacion", ignore = true)
     @Mapping(target = "objTipo.nombre", ignore = true)
     @Mapping(target = "objTipo.publicaciones", ignore = true)
-    @Mapping(target = "docentes", qualifiedByName = "mappeoDocentes")
+    @Mapping(target = "docentes", ignore = true)
     Publicacion mappearDePeticionAPublicacion(PublicacionDTOPeticion peticion);
 
     PublicacionDTORespuesta mappearDePublicacionARespuesta(Publicacion objPublicacion);
-
-    @Mapping(target = "docentes", qualifiedByName = "mappeoDocentesRespuesta")
-    List<PublicacionDTORespuesta> mappearDePublicacionsARespuesta(List<Publicacion> Publicacions);
-
-    @Named("mappeoDocentesRespuesta")
-    List<DocenteDTORespuesta> mappearDeDocentesARespuesta(List<Docente> docentes);
-
-    @Named("mappeoDocentes")
-    List<Docente> mappearDeDocentesDTOADocente(List<DocenteDTOPeticion> docentes);
-
-    default Docente mappearDeDocentesDTOADocente(DocenteDTOPeticion docente) {
-        Docente docenteMappeado = new Docente();
-        docenteMappeado.setIdPersona(docente.getIdPersona());
-        return docenteMappeado;
-    }
 }

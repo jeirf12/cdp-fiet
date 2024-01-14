@@ -33,10 +33,6 @@ public class DocenteEntity extends PersonaEntity {
     @NonNull
     private String departamento;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.ALL })
-    @JoinTable(name = "Docentes_Publicaciones", joinColumns = @JoinColumn(name = "idPersona"), inverseJoinColumns = @JoinColumn(name = "idPublicacion"))
-    private List<PublicacionEntity> publicaciones;
-
     @OneToOne(optional = false, cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "objDocente")
     private DireccionEntity objDireccion;
 }
