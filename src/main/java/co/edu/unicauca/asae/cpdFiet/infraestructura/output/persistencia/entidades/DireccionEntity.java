@@ -20,14 +20,18 @@ import lombok.Setter;
 @Entity
 @Table(name = "Direcciones")
 public class DireccionEntity {
+
     @Id
     private int idPersona;
+
     @Column(nullable = false)
     @NonNull
     private String direccionResidencia;
+
     @Column(nullable = false)
     @NonNull
     private String ciudad;
+
     @Column(nullable = false)
     @NonNull
     private String pais;

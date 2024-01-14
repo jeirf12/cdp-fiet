@@ -3,7 +3,9 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepcion
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepciones.estructuraExcepciones.CodigoError;
 
 public class ReglaNegocioExcepcion extends GestionClientesRuntimeException {
+
   private static final String FORMATO_EXCEPCION = "%s - Violación a regla de negocio: %s";
+
   private final String reglaNegocio;
 
   public ReglaNegocioExcepcion(final String reglaNegocio) {

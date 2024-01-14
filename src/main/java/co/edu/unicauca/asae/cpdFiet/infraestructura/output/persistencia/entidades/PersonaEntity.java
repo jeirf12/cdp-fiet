@@ -22,18 +22,23 @@ import lombok.Setter;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "Personas")
 public abstract class PersonaEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idPersona;
+
     @Column(nullable = false)
     @NonNull
     private String tipoIdentificacion;
+
     @Column(nullable = false)
     @NonNull
     private Long numeroIdentificacion;
+
     @Column(nullable = false)
     @NonNull
     private String nombres;
+
     @Column(nullable = false)
     @NonNull
     private String apellidos;

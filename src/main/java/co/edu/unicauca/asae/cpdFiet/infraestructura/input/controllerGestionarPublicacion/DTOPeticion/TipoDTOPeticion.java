@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class TipoDTOPeticion {
+
     @NotNull(message = "{publicacion.tipo.id.vacio}")
     @NonNull
     private Integer idTipo;

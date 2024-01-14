@@ -11,12 +11,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Docente extends Persona {
+
 	@NonNull
 	private String correo;
+
 	@NonNull
 	private String vinculacion;
+
 	@NonNull
 	private String departamento;
+
 	@NonNull
 	private Direccion objDireccion;
 }

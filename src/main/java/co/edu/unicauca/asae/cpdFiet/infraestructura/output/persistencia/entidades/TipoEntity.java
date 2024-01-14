@@ -23,6 +23,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "Tipos")
 public class TipoEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTipo;

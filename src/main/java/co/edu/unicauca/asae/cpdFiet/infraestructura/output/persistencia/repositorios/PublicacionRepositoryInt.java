@@ -5,6 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades.PublicacionEntity;
 
 public interface PublicacionRepositoryInt extends CrudRepository<PublicacionEntity, Integer> {
+
     @Query("SELECT case when count(p) > 0 then true else false end FROM PublicacionEntity p  WHERE lower(p.titulo)= lower(:titulo)")
     public boolean existePublicacionPorTitulo(String titulo);
 

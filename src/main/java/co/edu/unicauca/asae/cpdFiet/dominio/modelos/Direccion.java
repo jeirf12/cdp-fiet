@@ -11,12 +11,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Direccion {
+
 	private int idPersona;
+
 	@NonNull
 	private String direccionResidencia;
+
 	@NonNull
 	private String ciudad;
+
 	@NonNull
 	private String pais;
+
 	private Docente objDocente;
 }

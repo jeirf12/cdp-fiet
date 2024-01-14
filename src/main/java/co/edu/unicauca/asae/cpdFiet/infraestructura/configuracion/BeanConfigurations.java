@@ -13,6 +13,7 @@ import co.edu.unicauca.asae.cpdFiet.dominio.casosDeUso.GestionarTipoCUAdapter;
 
 @Configuration
 public class BeanConfigurations {
+
 	@Bean
 	public GestionarDocenteCUAdapter crearGestionarDocenteCUInt(GestionarDocenteGatewayIntPort objGestionarDocenteGatewayIntPort, DocenteFormateadorResultadosIntPort objDocenteFormateadorResultadosIntPort) {
 		GestionarDocenteCUAdapter objGestionarDocenteCUAdapter = new GestionarDocenteCUAdapter(objGestionarDocenteGatewayIntPort, objDocenteFormateadorResultadosIntPort);

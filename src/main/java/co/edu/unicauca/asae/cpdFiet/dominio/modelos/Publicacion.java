@@ -12,13 +12,18 @@ import lombok.Setter;
 @NoArgsConstructor
 @RequiredArgsConstructor
 public class Publicacion {
+
 	private int idPublicacion;
+
 	@NonNull
 	private String titulo;
+
 	@NonNull
 	private String area;
+
 	@NonNull
 	private Tipo objTipo;
+
 	@NonNull
 	private List<Docente> docentes;
 }

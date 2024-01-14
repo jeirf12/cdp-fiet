@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,17 +32,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Validated
 public class PublicacionRestController { 
+
     @NonNull
     private GestionarPublicacionCUIntPort objGestionarPublicacionsCUInt;
+
     @NonNull
     private GestionarTipoCUIntPort objGestionarTipoCUInt;
+
     @NonNull
     private GestionarDocenteCUIntPort objGestionarDocenteCUInt;
+
     @NonNull
     private PublicacionMapperInfraestructuraDominio objMapeador;
 
-    @PostMapping("/publicaciones")
-    public ResponseEntity<PublicacionDTORespuesta> crear(@Valid @RequestBody PublicacionDTOPeticion objPublicacion) {
+    @PostMapping("/publicacion")
+    public ResponseEntity<PublicacionDTORespuesta> crearPublicacion(@Valid @RequestBody PublicacionDTOPeticion objPublicacion) {
         Publicacion objPublicacionCrear = this.objMapeador.mappearDePeticionAPublicacion(objPublicacion);
         Tipo tipoObtenido = this.objGestionarTipoCUInt.obtenerTipo(objPublicacion.getObjTipo().getIdTipo());
         objPublicacionCrear.setObjTipo(tipoObtenido);
@@ -55,10 +59,19 @@ public class PublicacionRestController {
         return objRespuesta;
     }
 
-    @GetMapping("/publicaciones")
-    public ResponseEntity<List<PublicacionDTORespuesta>> listar() {
+    @GetMapping("/publicacion")
+    public ResponseEntity<List<PublicacionDTORespuesta>> listarPublicaciones() {
         ResponseEntity<List<PublicacionDTORespuesta>> objRespuesta = new ResponseEntity<List<PublicacionDTORespuesta>>(
             this.objGestionarPublicacionsCUInt.listarPublicaciones().stream().map(this.objMapeador::mappearDePublicacionARespuesta).collect(Collectors.toList()),
+            HttpStatus.OK
+        );
+        return objRespuesta;
+    }
+
+    @GetMapping("/publicacion/{patron}")
+    public ResponseEntity<List<PublicacionDTORespuesta>> listarPublicaciones(@PathVariable("patron") String patron) {
+        ResponseEntity<List<PublicacionDTORespuesta>> objRespuesta = new ResponseEntity<List<PublicacionDTORespuesta>>(
+                this.objGestionarPublicacionsCUInt.listarPublicacionesPorPatron(patron).stream().map(this.objMapeador::mappearDePublicacionARespuesta).collect(Collectors.toList()),
             HttpStatus.OK
         );
         return objRespuesta;

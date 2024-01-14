@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class TipoDTORespuesta {
+
 	private int idTipo;
+
 	private String nombre;
 }

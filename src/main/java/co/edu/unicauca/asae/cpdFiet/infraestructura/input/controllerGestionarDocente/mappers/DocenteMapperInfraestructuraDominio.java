@@ -7,7 +7,6 @@ import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Direccion;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Docente;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTOPeticion.DireccionDTOPeticion;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTOPeticion.DocenteDTOPeticion;
-import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTORespuesta.DireccionDTORespuesta;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTORespuesta.DocenteDTORespuesta;
 
 @Mapper(componentModel = "spring")
@@ -24,6 +23,4 @@ public interface DocenteMapperInfraestructuraDominio {
   @Mapping(target = "idPersona", ignore = true)
   @Mapping(target = "objDocente", ignore = true)
   Direccion mappearDePeticionADireccion(DireccionDTOPeticion direccionPeticion);
-
-  DireccionDTORespuesta mappearDeDireccionARespuesta(Direccion objDireccion);
 }

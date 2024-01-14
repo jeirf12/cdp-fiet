@@ -12,7 +12,9 @@ import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.reposito
 
 @Service
 public class GestionarPublicacionGatewayImplAdapter implements GestionarPublicacionGatewayIntPort{ 
+
     private final PublicacionRepositoryInt objPublicacionRepository;
+
     private final ModelMapper modelMapperPublicacion;
 
     public GestionarPublicacionGatewayImplAdapter(PublicacionRepositoryInt objPublicacionRepository, @Qualifier("getModelMapperPublicacion") ModelMapper modelMapperPublicacion) {
@@ -26,17 +28,24 @@ public class GestionarPublicacionGatewayImplAdapter implements GestionarPublicac
     }
 
     @Override
-    public List<Publicacion> listar() {
-        Iterable<PublicacionEntity> lista = this.objPublicacionRepository.findByTituloLikeOrderByIdPublicacionDesc("%S");
+    public Publicacion guardarPublicacion(Publicacion objPublicacion) {
+        PublicacionEntity objPublicacionEntity = this.modelMapperPublicacion.map(objPublicacion, PublicacionEntity.class);
+        PublicacionEntity objPublicacionEntityRegistrado = this.objPublicacionRepository.save(objPublicacionEntity);
+        Publicacion objPublicacionRespuesta = this.modelMapperPublicacion.map(objPublicacionEntityRegistrado, Publicacion.class);
+        return objPublicacionRespuesta;
+    }
+
+    @Override
+    public List<Publicacion> listarPublicaciones() {
+        Iterable<PublicacionEntity> lista = this.objPublicacionRepository.findAll();
         List<Publicacion> listaObtenida = this.modelMapperPublicacion.map(lista, new TypeToken<List<Publicacion>>() {}.getType());
         return listaObtenida;
     }
 
     @Override
-    public Publicacion guardar(Publicacion objPublicacion) {
-        PublicacionEntity objPublicacionEntity = this.modelMapperPublicacion.map(objPublicacion, PublicacionEntity.class);
-        PublicacionEntity objPublicacionEntityRegistrado = this.objPublicacionRepository.save(objPublicacionEntity);
-        Publicacion objPublicacionRespuesta = this.modelMapperPublicacion.map(objPublicacionEntityRegistrado, Publicacion.class);
-        return objPublicacionRespuesta;
+    public List<Publicacion> listarPublicacionesPorPatron(String patron) {
+        Iterable<PublicacionEntity> lista = this.objPublicacionRepository.findByTituloLikeOrderByIdPublicacionDesc(patron);
+        List<Publicacion> listaObtenida = this.modelMapperPublicacion.map(lista, new TypeToken<List<Publicacion>>() {}.getType());
+        return listaObtenida;
     }
 }

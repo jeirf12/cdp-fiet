@@ -1,7 +1,6 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.gateway;
 
 import java.util.Optional;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,9 @@ import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.reposito
 
 @Service
 public class GestionarDocenteGatewayImplAdapter implements GestionarDocenteGatewayIntPort {
+
   private final DocenteRepositoryInt docenteRepository;
+
   private final ModelMapper modelMapperDocente;
 
   public GestionarDocenteGatewayImplAdapter(DocenteRepositoryInt docenteRepository, @Qualifier("getModelMapperDocente") ModelMapper modelMapperDocente) {

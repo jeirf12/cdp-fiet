@@ -7,6 +7,7 @@ import co.edu.unicauca.asae.cpdFiet.infraestructura.output.controladorExcepcione
 
 @Service
 public class PublicacionFormateadorResultadosImplAdapter implements PublicacionFormateadorResultadosIntPort {
+
     @Override
     public void retornarRespuestaErrorEntidadExiste(String mensaje) {
         EntidadYaExisteException objException = new EntidadYaExisteException(mensaje);
