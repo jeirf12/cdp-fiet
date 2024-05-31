@@ -8,9 +8,9 @@ import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Publicacion;
 
 public class GestionarPublicacionCUAdapter implements GestionarPublicacionCUIntPort {
 
-    private final GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway;
+    private GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway;
 
-    private final PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados;
+    private PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados;
 
     public GestionarPublicacionCUAdapter(GestionarPublicacionGatewayIntPort objGestionarPublicacionGateway, PublicacionFormateadorResultadosIntPort objPublicacionFormateadorResultados) {
         this.objGestionarPublicacionGateway = objGestionarPublicacionGateway;

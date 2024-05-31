@@ -6,7 +6,7 @@ import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Tipo;
 
 public class GestionarTipoCUAdapter implements GestionarTipoCUIntPort {
 
-	private final GestionarTipoGatewayIntPort objGestionarTipoGateway;
+	private GestionarTipoGatewayIntPort objGestionarTipoGateway;
 
 	public GestionarTipoCUAdapter(GestionarTipoGatewayIntPort objGestionarTipoGateway) {
 		this.objGestionarTipoGateway = objGestionarTipoGateway;

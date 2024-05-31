@@ -2,9 +2,7 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPu
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -22,6 +20,7 @@ import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Publicacion;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Tipo;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTOPeticion.DocenteDTOPeticion;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTOPeticion.PublicacionDTOPeticion;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTOPeticion.ValidacionPublicacion;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTORespuesta.PublicacionDTORespuesta;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.mappers.PublicacionMapperInfraestructuraDominio;
 import lombok.NonNull;
@@ -46,7 +45,7 @@ public class PublicacionRestController {
     private PublicacionMapperInfraestructuraDominio objMapeador;
 
     @PostMapping("/publicacion")
-    public ResponseEntity<PublicacionDTORespuesta> crearPublicacion(@Valid @RequestBody PublicacionDTOPeticion objPublicacion) {
+    public ResponseEntity<PublicacionDTORespuesta> crearPublicacion(@Validated(ValidacionPublicacion.class) @RequestBody PublicacionDTOPeticion objPublicacion) {
         Publicacion objPublicacionCrear = this.objMapeador.mappearDePeticionAPublicacion(objPublicacion);
         Tipo tipoObtenido = this.objGestionarTipoCUInt.obtenerTipo(objPublicacion.getObjTipo().getIdTipo());
         objPublicacionCrear.setObjTipo(tipoObtenido);
@@ -62,7 +61,7 @@ public class PublicacionRestController {
     @GetMapping("/publicacion")
     public ResponseEntity<List<PublicacionDTORespuesta>> listarPublicaciones() {
         ResponseEntity<List<PublicacionDTORespuesta>> objRespuesta = new ResponseEntity<List<PublicacionDTORespuesta>>(
-            this.objGestionarPublicacionsCUInt.listarPublicaciones().stream().map(this.objMapeador::mappearDePublicacionARespuesta).collect(Collectors.toList()),
+                this.objGestionarPublicacionsCUInt.listarPublicaciones().stream().map(this.objMapeador::mappearDePublicacionARespuesta).toList(),
             HttpStatus.OK
         );
         return objRespuesta;
@@ -71,7 +70,7 @@ public class PublicacionRestController {
     @GetMapping("/publicacion/{patron}")
     public ResponseEntity<List<PublicacionDTORespuesta>> listarPublicaciones(@PathVariable("patron") String patron) {
         ResponseEntity<List<PublicacionDTORespuesta>> objRespuesta = new ResponseEntity<List<PublicacionDTORespuesta>>(
-                this.objGestionarPublicacionsCUInt.listarPublicacionesPorPatron(patron).stream().map(this.objMapeador::mappearDePublicacionARespuesta).collect(Collectors.toList()),
+                this.objGestionarPublicacionsCUInt.listarPublicacionesPorPatron(patron).stream().map(this.objMapeador::mappearDePublicacionARespuesta).toList(),
             HttpStatus.OK
         );
         return objRespuesta;

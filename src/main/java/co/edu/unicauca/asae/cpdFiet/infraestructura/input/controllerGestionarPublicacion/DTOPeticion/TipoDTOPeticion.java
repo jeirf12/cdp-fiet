@@ -13,7 +13,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class TipoDTOPeticion {
 
-    @NotNull(message = "{publicacion.tipo.id.vacio}")
+    @NotNull(message = "{publicacion.tipo.id.vacio}", groups = ValidacionPublicacion.class)
     @NonNull
     private Integer idTipo;
 }

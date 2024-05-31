@@ -3,24 +3,23 @@ package co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.gateway
 import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import co.edu.unicauca.asae.cpdFiet.aplicacion.output.GestionarPublicacionGatewayIntPort;
 import co.edu.unicauca.asae.cpdFiet.dominio.modelos.Publicacion;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.entidades.PublicacionEntity;
 import co.edu.unicauca.asae.cpdFiet.infraestructura.output.persistencia.repositorios.PublicacionRepositoryInt;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 public class GestionarPublicacionGatewayImplAdapter implements GestionarPublicacionGatewayIntPort{ 
 
-    private final PublicacionRepositoryInt objPublicacionRepository;
+    @NonNull
+    private PublicacionRepositoryInt objPublicacionRepository;
 
-    private final ModelMapper modelMapperPublicacion;
-
-    public GestionarPublicacionGatewayImplAdapter(PublicacionRepositoryInt objPublicacionRepository, @Qualifier("getModelMapperPublicacion") ModelMapper modelMapperPublicacion) {
-        this.objPublicacionRepository = objPublicacionRepository;
-        this.modelMapperPublicacion = modelMapperPublicacion;
-    }
+    @NonNull
+    private ModelMapper modelMapperPublicacion;
 
     @Override
     public boolean existePublicacionPorTitulo(String codigo) {

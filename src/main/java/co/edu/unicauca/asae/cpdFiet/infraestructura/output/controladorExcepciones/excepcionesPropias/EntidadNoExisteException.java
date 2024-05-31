@@ -6,9 +6,9 @@ import lombok.Getter;
 @Getter
 public class EntidadNoExisteException extends RuntimeException {
 
-  private final String llaveMensaje;
+  private String llaveMensaje;
 
-  private final String codigo;
+  private String codigo;
 
   public EntidadNoExisteException(CodigoError code) {
     super(code.getCodigo());

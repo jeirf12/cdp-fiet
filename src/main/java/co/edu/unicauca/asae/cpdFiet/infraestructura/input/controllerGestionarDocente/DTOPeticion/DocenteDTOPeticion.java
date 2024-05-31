@@ -1,10 +1,12 @@
 package co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarDocente.DTOPeticion;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import co.edu.unicauca.asae.cpdFiet.infraestructura.input.controllerGestionarPublicacion.DTOPeticion.ValidacionPublicacion;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,6 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class DocenteDTOPeticion {
 
+  @NotNull(message = "{publicacion.idPersona.vacio}", groups = ValidacionPublicacion.class)
   private int idPersona;
 
   @NotEmpty(message = "{docente.tipoId.vacio}")
@@ -47,5 +50,6 @@ public class DocenteDTOPeticion {
   private String departamento; 
 
   @NotNull(message = "{docente.direccion.vacio}")
+  @Valid
   private DireccionDTOPeticion objDireccion;
 }

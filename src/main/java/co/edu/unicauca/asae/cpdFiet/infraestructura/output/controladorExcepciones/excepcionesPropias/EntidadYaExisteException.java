@@ -6,9 +6,9 @@ import lombok.Getter;
 @Getter
 public class EntidadYaExisteException extends RuntimeException {
 
-  private final String llaveMensaje;
+  private String llaveMensaje;
 
-  private final String codigo;
+  private String codigo;
 
   public EntidadYaExisteException(CodigoError code) {
     super(code.getCodigo());
@@ -16,7 +16,7 @@ public class EntidadYaExisteException extends RuntimeException {
     this.codigo = code.getCodigo();
   }
 
-  public EntidadYaExisteException(final String message) {
+  public EntidadYaExisteException(String message) {
     super(message);
     this.llaveMensaje = CodigoError.ENTIDAD_YA_EXISTE.getLlaveMensaje();
     this.codigo = CodigoError.ENTIDAD_YA_EXISTE.getCodigo();
